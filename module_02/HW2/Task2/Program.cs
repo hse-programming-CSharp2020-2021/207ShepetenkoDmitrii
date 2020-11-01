@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task3
+namespace Task2
 {
     class Program
     {
@@ -9,7 +9,7 @@ namespace Task3
             public double X { get; set; }
             public double Y { get; set; }
             public Point(double x, double y) { X = x; Y = y; }
-            public Point() : this(0, 0) { } 
+            public Point() : this(0, 0) { }
 
             public double Ro
             {
@@ -37,21 +37,12 @@ namespace Task3
 
             }
             public string PointData
-            {   
+            {
                 get
                 {
                     string maket = "X = {0:F2}; Y = {1:F2}; Ro = {2:F2}; Fi = {3:F2} ";
                     return string.Format(maket, X, Y, Ro, Fi);
                 }
-            }
-        }
-        public static void Maxxx(Point a,Point b,Point c)
-        {
-            if((a.Ro<=b.Ro)&(b.Ro<=c.Ro))
-            {
-                Console.WriteLine(a.PointData);
-                Console.WriteLine(b.PointData);
-                Console.WriteLine(c.PointData);
             }
         }
         static void Main(string[] args)
@@ -70,7 +61,36 @@ namespace Task3
                 Console.Write("y = ");
                 double.TryParse(Console.ReadLine(), out y);
                 c.X = x; c.Y = y;
-                Maxxx(a, b, c);
+                if ((a.Ro <= b.Ro) & (b.Ro <= c.Ro))
+                {
+                    Console.WriteLine(a.PointData);
+                    Console.WriteLine(b.PointData);
+                    Console.WriteLine(c.PointData);
+                }
+                if ((a.Ro <= c.Ro) & (c.Ro <= b.Ro))
+                {
+                    Console.WriteLine(a.PointData);
+                    Console.WriteLine(c.PointData);
+                    Console.WriteLine(b.PointData);
+                }
+                if ((b.Ro <= a.Ro) & (a.Ro <= c.Ro))
+                {
+                    Console.WriteLine(b.PointData);
+                    Console.WriteLine(a.PointData);
+                    Console.WriteLine(c.PointData);
+                }
+                if ((c.Ro <= a.Ro) & (a.Ro <= b.Ro))
+                {
+                    Console.WriteLine(c.PointData);
+                    Console.WriteLine(a.PointData);
+                    Console.WriteLine(b.PointData);
+                }
+                if ((c.Ro <= b.Ro) & (b.Ro <= a.Ro))
+                {
+                    Console.WriteLine(c.PointData);
+                    Console.WriteLine(b.PointData);
+                    Console.WriteLine(a.PointData);
+                }
             } while (x != 0 | y != 0);
         }
     }
