@@ -13,7 +13,7 @@ namespace Task3
         EventHandler<VetoEventArgs> OnVote;
         public VetoEventArgs Vote(string Proposal)
         {
-            EventHandler<VetoEventArgs v+=
+            OnVote(Proposal, e;
         }
     }
     class VetoEventArgs : EventArgs 
